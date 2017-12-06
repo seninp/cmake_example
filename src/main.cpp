@@ -6,18 +6,17 @@ int add(int i, int j) {
 
 namespace py = pybind11;
 
-PYBIND11_MODULE(cmake_example, m) {
+PYBIND11_MODULE(_math, m) {
     m.doc() = R"pbdoc(
         Pybind11 example plugin
         -----------------------
 
-        .. currentmodule:: cmake_example
+        .. currentmodule:: _math
 
         .. autosummary::
            :toctree: _generate
 
            add
-           subtract
     )pbdoc";
 
     m.def("add", &add, R"pbdoc(
@@ -31,6 +30,7 @@ PYBIND11_MODULE(cmake_example, m) {
 
         Some other explanation about the subtract function.
     )pbdoc");
+
 
 #ifdef VERSION_INFO
     m.attr("__version__") = VERSION_INFO;

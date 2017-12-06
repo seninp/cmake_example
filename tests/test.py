@@ -1,10 +1,7 @@
-import cmake_example as m
+from cmake_example import math as m
 
-assert m.__version__ == '0.0.1'
 assert m.add(1, 2) == 3
-assert m.subtract(1, 2) == -1
+assert m.mul(2, 2) == 4
 
-from cmake_example.mult import mult
-assert mult(2, 2) == 4
-
-assert False
+#assert m.subtract(1, 2) == -1
+#assert m.__version__ == '0.0.1'
